@@ -4,10 +4,9 @@ import { useState } from "react";
 import BackgroundVideo from "./components/BackgroundVideo";
 import SignupForm from "./components/SignupForm";
 import Header from "./components/Header";
-import { X, Play } from "lucide-react"; // Imported Play icon optionally if you want to add it to the button later
+import { X } from "lucide-react";
 import { AnimatePresence, motion } from "framer-motion";
 
-// REPLACE THIS WITH YOUR YOUTUBE VIDEO ID
 const VIDEO_ID = "LdGMVdcVWNA";
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <BackgroundVideo />
       <Header />
 
-      {/* Hero Section */}
       <section className="flex-1 flex flex-col justify-end px-8 sm:px-12 md:max-w-4xl z-10 pb-12 sm:pb-16">
         <div className="space-y-6">
           <motion.h1
@@ -50,13 +48,13 @@ export default function Home() {
           >
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-black px-8 py-4 rounded-full font-medium text-lg hover:bg-gray-200 transition-all transform hover:scale-105"
+              className="bg-white text-black px-8 py-2 rounded-full font-medium text-lg hover:bg-gray-200 transition-all transform hover:scale-105"
             >
               Join Waitlist
             </button>
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="px-8 py-4 rounded-full font-medium text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center gap-2"
+              className="px-8 py-2 rounded-full font-medium text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center gap-2"
             >
               Watch Video
             </button>
@@ -64,7 +62,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Waitlist Modal */}
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -117,11 +114,9 @@ export default function Home() {
         )}
       </AnimatePresence>
 
-      {/* Video Player Modal */}
       <AnimatePresence>
         {videoModalOpen && (
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-8">
-            {/* Darker backdrop for cinema mode */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -136,7 +131,6 @@ export default function Home() {
               exit={{ opacity: 0, scale: 0.9 }}
               className="relative w-full max-w-6xl aspect-video bg-black rounded-2xl overflow-hidden shadow-2xl border border-white/10"
             >
-              {/* Close Button - Floating inside slightly */}
               <button
                 onClick={() => setVideoModalOpen(false)}
                 className="absolute top-4 right-4 z-20 p-2 bg-black/50 text-white hover:bg-white hover:text-black rounded-full transition-all duration-300 backdrop-blur-md group"
@@ -144,7 +138,6 @@ export default function Home() {
                 <X size={24} />
               </button>
 
-              {/* YouTube Iframe */}
               <iframe
                 className="w-full h-full"
                 src={`https://www.youtube.com/embed/${VIDEO_ID}?autoplay=1&rel=0&showinfo=0&modestbranding=1&color=white`}

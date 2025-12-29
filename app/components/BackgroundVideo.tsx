@@ -10,11 +10,9 @@ export default function BackgroundVideo() {
                 alt="Background"
                 fill
                 priority
-                className="object-cover opacity-60"
+                className="object-cover"
                 quality={90}
             />
-            {/* Gradient Overlay for better text readability */}
-            <div className="absolute inset-0 bg-linear-to-b from-black/40 via-black/20 to-black/80" />
         </div>
     );
 }
