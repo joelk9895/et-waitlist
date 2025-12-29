@@ -14,11 +14,11 @@ export default function Home() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <main className="relative min-h-screen flex flex-col text-white font-sans overflow-hidden">
+    <main className="relative min-h-screen w-screen flex flex-col text-white font-sans overflow-hidden">
       <BackgroundVideo />
       <Header />
 
-      <section className="flex-1 flex flex-col justify-end px-8 sm:px-12 md:max-w-4xl z-10 pb-12 sm:pb-16">
+      <section className="flex-1 flex flex-col justify-end px-6 sm:px-12 md:max-w-4xl z-10 pb-12 sm:pb-16">
         <div className="space-y-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
@@ -44,17 +44,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex items-center gap-4"
+            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
           >
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-black px-8 py-2 rounded-full font-medium text-lg hover:bg-gray-200 transition-all transform hover:scale-105"
+              className="bg-white text-black px-8 py-3 sm:py-2 rounded-full font-medium text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-full sm:w-auto"
             >
               Join Waitlist
             </button>
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="px-8 py-2 rounded-full font-medium text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center gap-2"
+              className="px-8 py-3 sm:py-2 rounded-full font-medium text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               Watch Video
             </button>
@@ -79,18 +79,18 @@ export default function Home() {
               exit={{ opacity: 0, scale: 0.95 }}
               className="relative flex flex-col items-center max-w-xl w-full"
             >
-              <div className="relative w-full bg-zinc-900/80 border border-white/10 p-10 rounded-3xl shadow-2xl backdrop-blur-2xl overflow-hidden ring-1 ring-white/5">
+              <div className="relative w-full bg-zinc-900/80 border border-white/10 p-6 sm:p-10 rounded-3xl shadow-2xl backdrop-blur-2xl overflow-hidden ring-1 ring-white/5">
                 <div className="absolute inset-0 bg-linear-to-b from-white/5 to-transparent pointer-events-none" />
 
                 <button
                   onClick={() => setIsModalOpen(false)}
-                  className="absolute top-6 right-6 text-white/30 hover:text-white transition-colors z-10"
+                  className="absolute top-4 right-4 sm:top-6 sm:right-6 text-white/30 hover:text-white transition-colors z-10"
                 >
                   <X size={22} />
                 </button>
 
-                <div className="relative text-center mb-10 space-y-3">
-                  <h2 className="text-3xl font-anton uppercase tracking-wide bg-linear-to-b from-white to-white/60 bg-clip-text text-transparent">
+                <div className="relative text-center mb-8 sm:mb-10 space-y-3">
+                  <h2 className="text-2xl sm:text-3xl font-anton uppercase tracking-wide bg-linear-to-b from-white to-white/60 bg-clip-text text-transparent">
                     Join the waitlist
                   </h2>
                   <p className="text-white/60 text-sm leading-relaxed max-w-[280px] mx-auto font-light">
