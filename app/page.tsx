@@ -14,17 +14,17 @@ export default function Home() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <main className="relative min-h-screen w-full flex flex-col text-white font-sans overflow-hidden">
+    <main className="relative min-h-screen w-full flex flex-col text-white font-sans overflow-x-hidden">
       <BackgroundVideo />
       <Header />
 
-      <section className="flex-1 flex flex-col justify-end px-6 sm:px-12 md:max-w-4xl z-10 pb-12 sm:pb-16">
-        <div className="space-y-6">
+      <section className="flex-1 flex flex-col justify-end px-6 sm:px-12 md:max-w-4xl z-10 pb-6 sm:pb-16">
+        <div className="space-y-3 sm:space-y-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-4xl sm:text-6xl md:text-7xl font-anton font-light uppercase leading-[1.2] tracking-wide max-w-3xl drop-shadow-lg"
+            className="text-3xl sm:text-6xl md:text-7xl font-anton font-light uppercase leading-[1.1] sm:leading-[1.2] tracking-wide max-w-3xl drop-shadow-lg"
           >
             Ethereal Techno <br />
             Is Becoming
@@ -35,26 +35,27 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-sm sm:text-xl text-white/80 max-w-4xl font-light leading-relaxed"
+            className="text-xs sm:text-xl text-white/80 max-w-4xl font-light leading-relaxed"
           >
             A space for sound to evolve, for creators to connect, and for fans to feel closer than ever.<br />
-            Ethereal Techno is more than music - it&apos;s home.          </motion.p>
+            Ethereal Techno is more than music - it&apos;s home.
+          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
+            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
           >
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-black px-8 py-3 sm:py-2 rounded-full font-medium text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-full sm:w-auto"
+              className="bg-white text-black px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-full sm:w-auto"
             >
               Join Waitlist
             </button>
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="px-8 py-3 sm:py-2 rounded-full font-medium text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center justify-center gap-2 w-full sm:w-auto"
             >
               Watch Video
             </button>
