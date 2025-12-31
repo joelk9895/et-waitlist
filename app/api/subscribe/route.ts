@@ -11,7 +11,7 @@ export async function POST(req: Request) {
         }
 
         const body = await req.json();
-        const { email, type, attributes } = body; 
+        const { email, attributes } = body;
 
         if (!email) {
             return NextResponse.json(
@@ -20,7 +20,11 @@ export async function POST(req: Request) {
             );
         }
 
-        const listId = type === "artist" ? 20 : 21;
+        const listIds: number[] = [];
+        if (attributes?.IS_PRODUCER) listIds.push(20);
+        if (attributes?.IS_FAN) listIds.push(21);
+
+        if (listIds.length === 0) listIds.push(21);
 
         const brevoRes = await fetch("https://api.brevo.com/v3/contacts", {
             method: "POST",
@@ -31,13 +35,27 @@ export async function POST(req: Request) {
             },
             body: JSON.stringify({
                 email,
-                listIds: [listId],
-                updateEnabled: true, 
+                listIds: listIds,
+                updateEnabled: true,
                 attributes: attributes || {},
             }),
         });
 
-        const data = await brevoRes.json();
+        if (brevoRes.status === 204) {
+            return NextResponse.json(
+                { success: true, listIds, contact: null },
+                { status: 200 }
+            );
+        }
+
+        const text = await brevoRes.text();
+        let data;
+        try {
+            data = text ? JSON.parse(text) : {};
+        } catch (e) {
+            console.error("Failed to parse Brevo response:", text);
+            data = { message: text };
+        }
 
         if (!brevoRes.ok) {
             console.error("Brevo API Error:", data);
@@ -50,7 +68,7 @@ export async function POST(req: Request) {
         return NextResponse.json(
             {
                 success: true,
-                listId,
+                listIds,
                 contact: data,
             },
             { status: 200 }

@@ -14,7 +14,7 @@ export default function Home() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <main className="relative min-h-screen w-screen flex flex-col text-white font-sans overflow-hidden">
+    <main className="relative min-h-screen w-full flex flex-col text-white font-sans overflow-hidden">
       <BackgroundVideo />
       <Header />
 
@@ -35,10 +35,10 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg sm:text-xl text-white/80 max-w-xl font-light leading-relaxed"
+            className="text-lg sm:text-xl text-white/80 max-w-4xl font-light leading-relaxed"
           >
-            A new platform is rising - built for producers, inspired by fans, and driven by the sound that defines us.
-          </motion.p>
+            A space for sound to evolve, for creators to connect, and for fans to feel closer than ever.<br />
+            Ethereal Techno is more than music - it&apos;s home.          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
