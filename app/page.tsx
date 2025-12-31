@@ -35,7 +35,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-lg sm:text-xl text-white/80 max-w-4xl font-light leading-relaxed"
+            className="text-sm sm:text-xl text-white/80 max-w-4xl font-light leading-relaxed"
           >
             A space for sound to evolve, for creators to connect, and for fans to feel closer than ever.<br />
             Ethereal Techno is more than music - it&apos;s home.          </motion.p>
