@@ -14,11 +14,11 @@ export default function Home() {
   const [videoModalOpen, setVideoModalOpen] = useState(false);
 
   return (
-    <main className="relative min-h-screen w-full flex flex-col text-white font-sans overflow-x-hidden">
+    <main className="relative h-dvh w-full flex flex-col text-white font-sans overflow-hidden">
       <BackgroundVideo />
       <Header />
 
-      <section className="flex-1 flex flex-col justify-end px-6 sm:px-12 md:max-w-4xl z-10 pb-6 sm:pb-16">
+      <section className="absolute inset-x-0 bottom-0 z-10 px-6 sm:px-12 pb-8 sm:static sm:pb-16 sm:max-w-4xl sm:flex-1 sm:flex sm:flex-col sm:justify-end">
         <div className="space-y-3 sm:space-y-6">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
