@@ -26,10 +26,11 @@ export async function POST(req: Request) {
 
         if (listIds.length === 0) listIds.push(21);
 
-        const brevoRes = await fetch("https://api.brevo.com/v3/contacts", {
+        const brevoRes = await fetch("https://proxy.etherealtechno.com/v3/contacts", {
             method: "POST",
             headers: {
                 "api-key": apiKey,
+                "X-Proxy-Token": process.env.PROXY_TOKEN!,
                 "Content-Type": "application/json",
                 Accept: "application/json",
             },
