@@ -76,8 +76,8 @@ export async function POST(req: Request) {
         const htmlContent = `
             <!DOCTYPE html>
             <html>
-            <body style="margin: 0; padding: 0; background-color: #000000;">
-                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #000000; width: 100%;">
+            <body style="margin: 0; padding: 0; background-color: #111111;">
+                <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #111111; width: 100%;">
                     <tr>
                         <td align="center" style="padding: 40px 20px;">
                             <table role="presentation" style="max-width: 600px; width: 100%; text-align: left; font-family: Arial, sans-serif; color: #ffffff;">
