@@ -49,7 +49,6 @@ export async function POST(req: Request) {
             }),
         });
 
-        // Parse contact response to ensure it worked before sending email
         let contactData = null;
         if (contactRes.status !== 204) {
             const text = await contactRes.text();
@@ -64,12 +63,8 @@ export async function POST(req: Request) {
             );
         }
 
-        // ---------------------------------------------------------
-        // 3. Send Transactional Welcome Email
-        // ---------------------------------------------------------
 
-        // Define content for everyone
-        const sender = { name: "Ethereal Techno", email: "updates@etherealtechno.com" };
+        const sender = { name: "Ethereal Techno", email: "noreply@etherealtechno.com" };
         const subject = "You're on the waitlist!";
         const logoUrl = "https://www.etherealtechno.com/logo.svg";
 
