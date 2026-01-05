@@ -66,7 +66,7 @@ export async function POST(req: Request) {
 
         const sender = { name: "Ethereal Techno", email: "noreply@etherealtechno.com" };
         const subject = "You're on the waitlist!";
-        const logoUrl = "https://www.etherealtechno.com/logo.svg";
+        const logoUrl = "https://ethereal-misc.s3.eu-west-1.amazonaws.com/Ethereal-Techno-Logo.png";
 
         const htmlContent = `
             <!DOCTYPE html>
