@@ -49,7 +49,7 @@ export default function Home() {
           >
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-black px-2 sm:px-4 py-2 sm:py-4 sm:px-8 rounded-full font-medium text-xs sm:text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-fit text-nowrap"
+              className="bg-white text-black px-4 py-2 sm:py-4 sm:px-8 rounded-full font-medium text-xs sm:text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-fit text-nowrap"
             >
               Join Waitlist
             </button>
