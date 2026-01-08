@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono, Anton } from "next/font/google"; // Added Anton
 import "./globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
@@ -18,6 +18,13 @@ const anton = Anton({
   weight: "400",
   subsets: ["latin"],
 });
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  colorScheme: "dark",
+  initialScale: 1,
+  maximumScale: 1,
+};
 
 
 export const metadata: Metadata = {
