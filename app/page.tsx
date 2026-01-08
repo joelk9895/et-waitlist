@@ -45,17 +45,17 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto"
+            className="flex flex-row justify-start items-center gap-3 sm:gap-4 w-full sm:w-auto"
           >
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-white text-black px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg hover:bg-gray-200 transition-all transform hover:scale-105 w-full sm:w-auto"
+              className="bg-white text-black px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg hover:bg-gray-200 transition-all transform hover:scale-105"
             >
               Join Waitlist
             </button>
             <button
               onClick={() => setVideoModalOpen(true)}
-              className="px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center justify-center gap-2 w-full sm:w-auto"
+              className="px-8 py-2.5 sm:py-2 rounded-full font-medium text-base sm:text-lg border border-white/30 text-white hover:bg-white/10 transition-all transform hover:scale-105 flex items-center justify-center gap-2"
             >
               Watch Video
             </button>
